@@ -1,0 +1,21 @@
+{
+  "name": "template-for-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edp5/template-for-node.git"
+  },
+  "keywords": [],
+  "author": "edp5",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/edp5/template-for-node/issues"
+  },
+  "homepage": "https://github.com/edp5/template-for-node#readme"
+}
