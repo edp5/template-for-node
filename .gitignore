@@ -144,3 +144,10 @@ vite.config.ts.timestamp-*
 
 # MacOS system
 .DS_Store
+
+# Windows system
+Thumbs.db
+
+# IDE
+**/.idea/
+**/.vscode/
