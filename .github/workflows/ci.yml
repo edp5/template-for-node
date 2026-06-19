@@ -1,0 +1,53 @@
+# This workflow is base for CI/CD pipelines for the project. It is triggered on push and pull request events to the main branch.
+# Eslint and tests are already configured in this workflow. You can add more jobs to this workflow as per your project requirements.
+name: ci
+
+on:
+  merge_group:
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+
+jobs:
+  eslint:
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run eslint
+        run: npm run lint
+
+  # Uncomment the following job if you want to run tests on pull requests and pushes to main branch
+#  test:
+#    if: github.event.pull_request.draft == false
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout code
+#        uses: actions/checkout@v6
+#
+#      - name: Setup node
+#        uses: actions/setup-node@v6
+#        with:
+#          node-version-file: .nvmrc
+#
+#      - name: Install dependencies
+#        run: npm ci
+#
+#      - name: Run tests
+#        run: npm test
