@@ -6,12 +6,7 @@
 version: 2
 updates:
   - package-ecosystem: "github-actions"
-    directories:
-      - "./"
-      - "./auto-merge"
-      - "./pr-title-check"
-      - "./release"
-      - "./update-node-version"
+    directory: "./"
     schedule:
       interval: "daily"
     commit-message:
